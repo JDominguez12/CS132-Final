@@ -50,18 +50,14 @@ class DataFrame():
             return pd.DataFrame(columns=self.data.columns)
         return self.data[self.data['Rank'] == int(rank)]
     def get_dataframe(self):
-        return self.data
-    def display_formatted(self, df=None, columns=None):
-        if df is None:
-            df = self.data
-        
+        return self.data 
+    def display_formatted(self, df=None, columns=None): 
         if columns:
             df = df[columns]
         
         if df.empty:
             print("No movies found matching the criteria.")
             return
-       
-        print(df.to_string(index=False))
+        print(df.to_string(index=False)) 
 
     
